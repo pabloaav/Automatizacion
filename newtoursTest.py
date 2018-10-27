@@ -27,6 +27,15 @@ class NewTours (unittest.TestCase):
         countryDropDown.select_by_visible_text("CONGO")
         time.sleep(2)
         self.assertEquals(countryDropDown.first_selected_option.text.strip(),"CONGO")
+    def test_register(self):
+        user_box = self.driver.find_element_by_name("userName")
+        pass_box = self.driver.find_element_by_name("password")
+        submit_button = self.driver.find_element_by_name("login")
+        user_box.send_keys("test")
+        pass_box.send_keys("test")
+        submit_button.click()
+        link_registration_form = self.driver.find_element_by_link_text("registration form")
+        self.assertEqual(link_registration_form.text, "registration form")
     """
     Finalizar el unti Test con tearDown()
     """
