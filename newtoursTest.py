@@ -1,41 +1,40 @@
 import unittest
-import time
 from selenium import webdriver
-from selenium.webdriver.support.ui import Select
+from Pages.pageIndex import *
+from Pages.pageRegister import *
+
 """
 Se define una clase que hereda de unittes.TestCase
 """
 class NewTours (unittest.TestCase):
     """
     El metodo setUp define e implementa las operaciones basicas
-    inciailes para los casos de prueba, y que resultan repetitivas y generales
+    inciailes para los casos de prueba, y que resultan repetitivas y generales.
+    Método para configurar el dispositivo de prueba antes de ejercitarlo.
     """
     def setUp(self):
         self.driver = webdriver.Chrome('chromedriver.exe')
         self.driver.get('http://newtours.demoaut.com/')
+        # Instanciar objeto tipo PageIndex y un objeto PageRegister
+        self.index_page = PageIndex(self.driver)
+        self.register_page = PageRegister(self.driver)
         time.sleep(3)
     """
     Seccion de Test Cases: se colocan aqui los casos de prueba
     """
-    def test_dropdown(self):
-        self.driver.find_element_by_link_text("REGISTER").click()
-        countryDropDown = Select(self.driver.find_element_by_name("country"))
-        countryDropDown.select_by_index(4)
-        time.sleep(2)
-        countryDropDown.select_by_value("11")
-        time.sleep(2)
-        countryDropDown.select_by_visible_text("CONGO")
-        time.sleep(2)
-        self.assertEquals(countryDropDown.first_selected_option.text.strip(),"CONGO")
     def test_register(self):
-        user_box = self.driver.find_element_by_name("userName")
-        pass_box = self.driver.find_element_by_name("password")
-        submit_button = self.driver.find_element_by_name("login")
-        user_box.send_keys("test")
-        pass_box.send_keys("test")
-        submit_button.click()
+        self.index_page.clic_register()
+        self.register_page.country_select_index(4)
+        self.register_page.country_select_value("11")
+        self.register_page.country_select_visibleText("CONGO")
+        self.register_page.verify_country("ITALY")
+
+
+    def test_login(self):
+        self.index_page.login("test","test")
         link_registration_form = self.driver.find_element_by_link_text("registration form")
         self.assertEqual(link_registration_form.text, "registration form")
+
     """
     Finalizar el unti Test con tearDown()
     """
