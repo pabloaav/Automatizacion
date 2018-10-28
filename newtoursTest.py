@@ -27,7 +27,7 @@ class NewTours (unittest.TestCase):
         self.register_page.country_select_index(4)
         self.register_page.country_select_value("11")
         self.register_page.country_select_visibleText("CONGO")
-        self.register_page.verify_country("ITALY")
+        self.register_page.verify_country("CONGO")
 
 
     def test_login(self):
