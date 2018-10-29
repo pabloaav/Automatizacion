@@ -1,4 +1,4 @@
-"""
+
 Objetos de pagina: concepto que separa y agrupa en clases,
 los distintos elementos y funcionalidades de cada pagina dentro de una web
 Se busca agrupar codigo los mas representativo posible de esas dunciones y elementos,
@@ -7,4 +7,7 @@ poder adaptar los test de manera mas sencilla y rapida.
 Asumen la responsabilidad de detectar los elementos y funcviones de una pagina dentro de una web
 Cada funcion de un page object se responsabiliza a obtener elementos segun su categoria,
 y a hacer assertions a esos elementos
-"""
+
+Los parametros By: se usan para definir lo que el metodo debe hacer, pero el momento
+de hacerlo puede ser posterior, evitando el problema de que los elementos (objetos) HTML
+no se hayan obtenido aun en el cuerpo de un HTTP request message

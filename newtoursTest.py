@@ -1,5 +1,5 @@
-import unittest
 from selenium import webdriver
+
 from Pages.pageIndex import *
 from Pages.pageRegister import *
 

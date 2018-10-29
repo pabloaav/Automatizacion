@@ -1,6 +1,7 @@
 import time
 import unittest
 from selenium.webdriver.support.ui import Select
+from selenium.webdriver.common.by import By
 
 class PageRegister():
 
@@ -10,25 +11,30 @@ class PageRegister():
     def __init__(self,myDriver):
         # Pasamos por parametro el webdriver
         self.driver = myDriver
-        self.countryDropDown = Select(self.driver.find_element_by_name("country"))
-    def country_select_index(self,index):
+        self.countryDropDown = (By.NAME,"country")
 
-        self.countryDropDown.select_by_index(index)
+
+    def country_select_index(self,index):
+        """
+        :param index: indice del dropdown
+        :return: accion asociada al elemento obtenido Pais
+        """
+        Select(self.driver.find_element(*self.countryDropDown)).select_by_index(index)
         time.sleep(2)
 
     def country_select_value(self,value):
-
-        self.countryDropDown.select_by_value(value)
+        Select(self.driver.find_element(*self.countryDropDown)).select_by_value(value)
         time.sleep(2)
 
     def country_select_visibleText(self,text):
 
-        self.countryDropDown.select_by_visible_text(text)
+        Select(self.driver.find_element(*self.countryDropDown)).select_by_visible_text(text)
         time.sleep(2)
 
-    def verify_country(self,name):
+    def verify_country(self,country):
 
         testCase = unittest.TestCase('__init__')
-        testCase.assertEqual(self.countryDropDown.first_selected_option.text.strip(), name)
-        testCase.assertTrue(self.countryDropDown.first_selected_option.text.strip()==name)
-        testCase.assertFalse(self.countryDropDown.first_selected_option.text.strip()==name)
+        testCase.assertEqual(Select(self.driver.find_element(*self.countryDropDown)).first_selected_option.text.strip(),country)
+        testCase.assertTrue(Select(self.driver.find_element(*self.countryDropDown)).first_selected_option.text.strip()==country)
+        testCase.assertFalse(Select(self.driver.find_element(*self.countryDropDown)).first_selected_option.text.strip()!=country)
+
