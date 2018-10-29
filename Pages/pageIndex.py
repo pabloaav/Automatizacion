@@ -25,6 +25,8 @@ class PageIndex():
         """
         :return: un link de tipo registro de usuario, y la accion asociada a el
         """
+        # Implicit Wait para esperar solo lo necesario para que cargue el objeto y no más
+        self.driver.implicitly_wait(5)
         self.driver.find_element(*self.register_link).click()
 
     def login(self,user,password):
@@ -33,6 +35,8 @@ class PageIndex():
         :param passsword: clave
         :return: acciones asociadas a los elementos encontrados en el formulario de autenticacion
         """
+        # Implicit Wait para esperar solo lo necesario para que cargue el objeto y no más
+        self.driver.implicitly_wait(5)
         self.driver.find_element(*self.user_box).send_keys(user)
         self.driver.find_element(*self.pass_box).send_keys(password)
         self.driver.find_element(*self.submit_button).click()

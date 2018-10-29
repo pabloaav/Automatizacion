@@ -19,17 +19,19 @@ class PageRegister():
         :param index: indice del dropdown
         :return: accion asociada al elemento obtenido Pais
         """
+        # Implicit Wait para esperar solo lo necesario para que cargue el objeto y no más
+        self.driver.implicitly_wait(5)
         Select(self.driver.find_element(*self.countryDropDown)).select_by_index(index)
-        time.sleep(2)
 
     def country_select_value(self,value):
+        # Implicit Wait para esperar solo lo necesario para que cargue el objeto y no más
+        self.driver.implicitly_wait(5)
         Select(self.driver.find_element(*self.countryDropDown)).select_by_value(value)
-        time.sleep(2)
 
     def country_select_visibleText(self,text):
-
+        # Implicit Wait para esperar solo lo necesario para que cargue el objeto y no más
+        self.driver.implicitly_wait(5)
         Select(self.driver.find_element(*self.countryDropDown)).select_by_visible_text(text)
-        time.sleep(2)
 
     def verify_country(self,country):
 

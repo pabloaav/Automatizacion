@@ -18,7 +18,6 @@ class NewTours (unittest.TestCase):
         # Instanciar objeto tipo PageIndex y un objeto PageRegister
         self.index_page = PageIndex(self.driver)
         self.register_page = PageRegister(self.driver)
-        time.sleep(3)
     """
     Seccion de Test Cases: se colocan aqui los casos de prueba
     """

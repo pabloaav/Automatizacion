@@ -11,3 +11,8 @@ y a hacer assertions a esos elementos
 Los parametros By: se usan para definir lo que el metodo debe hacer, pero el momento
 de hacerlo puede ser posterior, evitando el problema de que los elementos (objetos) HTML
 no se hayan obtenido aun en el cuerpo de un HTTP request message
+
+DOM : El DOM permite el acceso dinámico a través de la programación para acceder, añadir
+y cambiar dinámicamente contenido estructurado en documentos con lenguajes como ECMAScript (JavaScript).ç
+
+Espera Implicita (Implicit Wait): evita usar tiempos excesivos de espera de carga del DOM
