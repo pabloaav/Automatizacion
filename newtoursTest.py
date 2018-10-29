@@ -34,6 +34,9 @@ class NewTours (unittest.TestCase):
         link_registration_form = self.driver.find_element_by_link_text("registration form")
         self.assertEqual(link_registration_form.text, "registration form")
 
+    def test_login_by_tabs(self):
+        self.index_page.login_by_tab("test","test")
+
     """
     Finalizar el unti Test con tearDown()
     """

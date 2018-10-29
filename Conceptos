@@ -16,3 +16,21 @@ DOM : El DOM permite el acceso dinámico a través de la programación para acce
 y cambiar dinámicamente contenido estructurado en documentos con lenguajes como ECMAScript (JavaScript).ç
 
 Espera Implicita (Implicit Wait): evita usar tiempos excesivos de espera de carga del DOM
+
+Condiciones Esperadas: son acciones que dependen de la biblioteca WebDriverWait de Selenium.
+Se utilizan para esperar que se produzcan acciones en la pagina web, para ser testeadas.
+Sobre todo aquellas que necesitan de un tiempo a priori desconocido o implicito de carga.
+Algunas Expected Conditions son:
+- alert_is_present(): espera la aparicion de una alerta en el browser
+- element_located_selection_state_to_be(locator,is_selected): espera encontrar y obtener un elemento (locator = tupla By),
+y espera que se cumpla la condicion booleanda is_selected para saber si esta seleccionado.
+- element_located_to_be_select(locator): espera tener el elemento y que este seleccionado, ya que tiene un parametro TRUE implicito.
+Similar al anterior item
+- frame_to_be_avalaible_and_switch_to_it(locator): se fija que exista un frame, y si existe lo cambia (switchea) a el, para seleccionar el elemnto.
+- invisibility_of_element_located(locator): espera a que el elemento localizado sea invisible
+- visibility_of(element): Espera que el elemento esté visible y que su size sea mayor que cero
+- url_contains(url): donde espera que el url contenga un substring (case sensitive), verificando que exista.
+Trabaja sobre las distintas variaciones de la URL buscando alguna patron de test.
+
+Teclas Especiales: se puede automatizar el envio de teclas especiales, para simular el patron de tecleo
+o ingreso de un usuario humano, es decir, nombre_usuario+TABULACION+clave+TAB+click_boton
