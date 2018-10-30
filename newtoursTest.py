@@ -1,12 +1,14 @@
 from selenium import webdriver
-
 from Pages.pageIndex import *
 from Pages.pageRegister import *
+import xmlrunner
 
 """
 Se define una clase que hereda de unittes.TestCase
 """
 class NewTours (unittest.TestCase):
+    url = 'http://newtours.demoaut.com/'
+
     """
     El metodo setUp define e implementa las operaciones basicas
     inciailes para los casos de prueba, y que resultan repetitivas y generales.
@@ -14,7 +16,7 @@ class NewTours (unittest.TestCase):
     """
     def setUp(self):
         self.driver = webdriver.Chrome('chromedriver.exe')
-        self.driver.get('http://newtours.demoaut.com/')
+        self.driver.get(self.url)
         # Instanciar objeto tipo PageIndex y un objeto PageRegister
         self.index_page = PageIndex(self.driver)
         self.register_page = PageRegister(self.driver)
@@ -41,4 +43,18 @@ class NewTours (unittest.TestCase):
     Finalizar el unti Test con tearDown()
     """
     def tearDown(self):
+        self.driver.close()
         self.driver.quit()
+
+    """
+    Generar reporte XML de los Test corridos
+    Para ello hacemos un metodo main 
+    """
+if __name__ == '__main__':
+    unittest.main(
+        testRunner=xmlrunner.XMLTestRunner(output='output'),
+    #     failfast se utiliza para controlar posibles errores en el reporte
+        failfast=False,
+        buffer=False,
+        catchbreak=False
+    )

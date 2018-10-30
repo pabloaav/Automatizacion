@@ -34,3 +34,13 @@ Trabaja sobre las distintas variaciones de la URL buscando alguna patron de test
 
 Teclas Especiales: se puede automatizar el envio de teclas especiales, para simular el patron de tecleo
 o ingreso de un usuario humano, es decir, nombre_usuario+TABULACION+clave+TAB+click_boton
+
+Ejecucion por CMD de Windows del proyecto de Test: python -m unittest newtoursTest.py
+Esto en la carpeta donde esta guardado en disco el proyecto de Testing
+Se debe ejecutar el comando: pip install selenium en la consola cdm de Windows
+
+Guardar un Reporte de la Ejecucion del Test:
+Se adiciona una libreria (biblioteca) denominada unittest-xml-reporting
+El comando de install es : pip install unittest-xml-reporting
+Comando cmd: python -m xmlrunner newtoursTest.py
+Esto ejecuta el metodo main creado en el archivo principal, que tiene el metodo XMLTestRunner()
