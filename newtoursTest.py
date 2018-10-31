@@ -29,6 +29,9 @@ class NewTours(unittest.TestCase):
         else:
             self.driver = webdriver.PhantomJS()
         self.driver.get(self.configuracion.obtener_datos('url'))
+        # Formas de cambiar el tamaño de ventana
+        self. driver.maximize_window()
+        self.driver.set_window_size(800,800)
         # self.driver = webdriver.Chrome('chromedriver.exe')
         # Hacemos uso de PhantomJS para acelerar las pruebas en cuanto a tiempo total de ejecucion
         # self.driver = webdriver.PhantomJS()
@@ -51,7 +54,7 @@ class NewTours(unittest.TestCase):
 
     # @unittest.skip("Omitir por ahora")
     # @unittest.skipIf(5 > 4, "Si la expresion logica resulta verdadera, se omite el test")
-    @unittest.skipUnless(sys.platform.startswith('linux'),"A menos que sea Linux")
+    # @unittest.skipUnless(sys.platform.startswith('linux'),"A menos que sea Linux")
     def test_login(self):
         self.index_page.login("test", "test")
         link_registration_form = self.driver.find_element_by_link_text("registration form")
