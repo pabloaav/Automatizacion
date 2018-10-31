@@ -1,4 +1,4 @@
-
+Los metodos de test deben empezar con la palabra "test" para que se reconozcan como casos de prueba
 Objetos de pagina: concepto que separa y agrupa en clases,
 los distintos elementos y funcionalidades de cada pagina dentro de una web
 Se busca agrupar codigo los mas representativo posible de esas dunciones y elementos,
@@ -68,3 +68,7 @@ Con el fin de utilizar codigo existente con datos nuevos, y evitar el codigo dur
 nuestro codigo.
 Otra forma de obtener datos, es a traves de un archivo de configuracion XML, y del uso de una clase xmlReader.py,
 en la que se instancia un objeto que obtiene un tipo de datos y un valor buscado para ser testeado en la web
+
+Multiples ventanas o pestañas (tabs): se utiliza para hacer mas interactivas la pruebas, y se da en los casos en que las acciones,
+puedan y deban ser vistas a la par, como es el caso de distintos usuarios con diferentes niveles de autenticacion.
+Para ello se crea un caso de prueba (un metodo) que haga una conmutacion (switch) de pestañas en el navegador

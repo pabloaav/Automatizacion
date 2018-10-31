@@ -29,9 +29,15 @@ class NewTours(unittest.TestCase):
         else:
             self.driver = webdriver.PhantomJS()
         self.driver.get(self.configuracion.obtener_datos('url'))
+        # Abrimos una nueva ventana o tab ejecutando un script JS
+        self.driver.execute_script("window.open('http://www.google.com.ar')")
         # Formas de cambiar el tamaño de ventana
         self. driver.maximize_window()
-        self.driver.set_window_size(800,800)
+        # Creamos un array de tabs para el test de varias ventanas, que es objeto de tipo windows_handles
+        self.mis_tabs = self.driver.window_handles
+
+
+        # self.driver.set_window_size(800,800)
         # self.driver = webdriver.Chrome('chromedriver.exe')
         # Hacemos uso de PhantomJS para acelerar las pruebas en cuanto a tiempo total de ejecucion
         # self.driver = webdriver.PhantomJS()
@@ -62,6 +68,14 @@ class NewTours(unittest.TestCase):
 
     def test_login_by_tabs(self):
         self.index_page.login_by_tab("test", "test")
+
+    def test_cambiando_tabs(self):
+        """
+        El tab[1] es el siguiente al tab[0], que es la ventana principal del browser
+        :return:
+        """
+        self.driver.switch_to.window(self.mis_tabs[1])
+        self.driver.get("http://virtual-moodle.unne.edu.ar/login/index.php")
 
     """
     Finalizar el unti Test con tearDown()
