@@ -66,3 +66,5 @@ Significa que, si y solo si se da la condicion referida, se ejecuta el test.
 Uso de Datos: las pruebas deben ser lo mas flexibles posibles para poder adaptarse a distintas fuentes de datos.
 Con el fin de utilizar codigo existente con datos nuevos, y evitar el codigo duro (hardcode) que haria menos reutilizable
 nuestro codigo.
+Otra forma de obtener datos, es a traves de un archivo de configuracion XML, y del uso de una clase xmlReader.py,
+en la que se instancia un objeto que obtiene un tipo de datos y un valor buscado para ser testeado en la web

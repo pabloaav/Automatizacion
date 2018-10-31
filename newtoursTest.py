@@ -1,6 +1,6 @@
 from selenium import webdriver
-
 from Helpers.data import TestData
+from Helpers.xmlReader import xmlReader
 from Pages.pageIndex import *
 from Pages.pageRegister import *
 import xmlrunner
@@ -13,7 +13,6 @@ Se define una clase que hereda de unittes.TestCase
 
 
 class NewTours(unittest.TestCase):
-    url = 'http://newtours.demoaut.com/'
 
     """
     El metodo setUp define e implementa las operaciones basicas
@@ -22,10 +21,18 @@ class NewTours(unittest.TestCase):
     """
 
     def setUp(self):
+        # obtener datos a traves de un XML document
+        self.configuracion = xmlReader()
+        # Si el navegador que testeamos es chrome entonces...
+        if self.configuracion.obtener_datos('browser') == 'chrome':
+            self.driver = webdriver.Chrome('chromedriver.exe')
+        else:
+            self.driver = webdriver.PhantomJS()
+        self.driver.get(self.configuracion.obtener_datos('url'))
         # self.driver = webdriver.Chrome('chromedriver.exe')
         # Hacemos uso de PhantomJS para acelerar las pruebas en cuanto a tiempo total de ejecucion
-        self.driver = webdriver.PhantomJS()
-        self.driver.get(self.url)
+        # self.driver = webdriver.PhantomJS()
+        # self.driver.get(self.url)
         # Instanciar objeto tipo PageIndex y un objeto PageRegister
         self.index_page = PageIndex(self.driver)
         self.register_page = PageRegister(self.driver)

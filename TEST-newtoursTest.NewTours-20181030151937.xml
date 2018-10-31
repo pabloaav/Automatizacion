@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite errors="0" failures="0" name="newtoursTest.NewTours-20181030151937" skipped="0" tests="3" time="71.500" timestamp="2018-10-30T15:20:49">
+	<testcase classname="newtoursTest.NewTours" name="test_login" time="34.414" timestamp="2018-10-30T15:20:12"/>
+	<testcase classname="newtoursTest.NewTours" name="test_login_by_tabs" time="18.979" timestamp="2018-10-30T15:20:31"/>
+	<testcase classname="newtoursTest.NewTours" name="test_register" time="18.108" timestamp="2018-10-30T15:20:49"/>
+	<system-out>
+<![CDATA[]]>	</system-out>
+	<system-err>
+<![CDATA[]]>	</system-err>
+</testsuite>
