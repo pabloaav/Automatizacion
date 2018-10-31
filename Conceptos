@@ -51,3 +51,17 @@ que tambien se instala, con el comando: pip install html_testrunner y permite vi
 Para correr el test con reporte, ejecutar: python nombre_testProject.py en la consola Terminal
 
 Screenshots: se toman para dejar evidencia de  determinados bugs para ser mostrados luego en algun informe.
+
+Handless Browser: permite manejar un navegador sin tener que abrirlo en cada ejecucion de test, lo cual ahorra tiempo,
+cuando no queremos ver la accion automatizada ejecutandose en la GUI probada. Para eso se utiliza una libreria que se llama
+PhantomJS de codigo abierto, la cual se copia y pega en la crpet del proyecto de automation.
+
+Omitir TestCases: se denominan skip (salto) y pueden abarcar un test o varios
+Se coloca antes del metodo omitido la liena: @unittest.skip("motivo o mensaje")
+El segundo modo de omitir es colocar una condicion que puede dar true o false. Si es verdadera se ejecuta el salto, sino se ejecuta el test:
+@unittest.skipIf(condition,reason)
+Un tercer modo es usar la condicion "A menos que...": @unittest.sekipUnless(condition,reason).
+Significa que, si y solo si se da la condicion referida, se ejecuta el test.
+El ejemplo muestra el caso de qye los test puedan ser corridos endistintas plataformas o sistemas operativos
+pudiendo darse el caso de que algunos test solo sean correspondientes hacerlos en un SO y no en otro
+
