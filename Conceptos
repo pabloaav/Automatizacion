@@ -62,6 +62,7 @@ El segundo modo de omitir es colocar una condicion que puede dar true o false. S
 @unittest.skipIf(condition,reason)
 Un tercer modo es usar la condicion "A menos que...": @unittest.sekipUnless(condition,reason).
 Significa que, si y solo si se da la condicion referida, se ejecuta el test.
-El ejemplo muestra el caso de qye los test puedan ser corridos endistintas plataformas o sistemas operativos
-pudiendo darse el caso de que algunos test solo sean correspondientes hacerlos en un SO y no en otro
 
+Uso de Datos: las pruebas deben ser lo mas flexibles posibles para poder adaptarse a distintas fuentes de datos.
+Con el fin de utilizar codigo existente con datos nuevos, y evitar el codigo duro (hardcode) que haria menos reutilizable
+nuestro codigo.

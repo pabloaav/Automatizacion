@@ -1,4 +1,6 @@
 from selenium import webdriver
+
+from Helpers.data import TestData
 from Pages.pageIndex import *
 from Pages.pageRegister import *
 import xmlrunner
@@ -33,10 +35,11 @@ class NewTours(unittest.TestCase):
     """
 
     def test_register(self):
+        country_DataSet = TestData()
         self.index_page.clic_register()
         self.register_page.country_select_index(4)
         self.register_page.country_select_value("11")
-        self.register_page.country_select_visibleText("CONGO")
+        self.register_page.country_select_visibleText(country_DataSet.country)
         self.register_page.verify_country("CONGO")
 
     # @unittest.skip("Omitir por ahora")
