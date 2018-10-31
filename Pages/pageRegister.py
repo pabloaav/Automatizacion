@@ -22,11 +22,15 @@ class PageRegister():
         # Implicit Wait para esperar solo lo necesario para que cargue el objeto y no más
         self.driver.implicitly_wait(5)
         Select(self.driver.find_element(*self.countryDropDown)).select_by_index(index)
+    #     tomamos un screenshot de esta seccion de codigo, guardandola como archivo:
+        self.driver.get_screenshot_as_file('capturaCountryIndex.png')
 
     def country_select_value(self,value):
         # Implicit Wait para esperar solo lo necesario para que cargue el objeto y no más
         self.driver.implicitly_wait(5)
         Select(self.driver.find_element(*self.countryDropDown)).select_by_value(value)
+        #     tomamos un screenshot de esta seccion de codigo, guardandola como archivo, con save_screenshot:
+        self.driver.save_screenshot('capturaCountryValue.jpg')
 
     def country_select_visibleText(self,text):
         # Implicit Wait para esperar solo lo necesario para que cargue el objeto y no más

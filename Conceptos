@@ -43,4 +43,11 @@ Guardar un Reporte de la Ejecucion del Test:
 Se adiciona una libreria (biblioteca) denominada unittest-xml-reporting
 El comando de install es : pip install unittest-xml-reporting
 Comando cmd: python -m xmlrunner newtoursTest.py
-Esto ejecuta el metodo main creado en el archivo principal, que tiene el metodo XMLTestRunner()
+Esto ejecuta el metodo main creado en el archivo principal, que tiene el metodo XMLTestRunner().
+Genera un reporte en formato xml en la crpeta del proyecto con informacion limitada de los test
+
+Otro tipo de reporte es el que se hace con htmlTestRunner, una libreria de cofigo abierto,
+que tambien se instala, con el comando: pip install html_testrunner y permite visualizar resultados
+Para correr el test con reporte, ejecutar: python nombre_testProject.py en la consola Terminal
+
+Screenshots: se toman para dejar evidencia de  determinados bugs para ser mostrados luego en algun informe.

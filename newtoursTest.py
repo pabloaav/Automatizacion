@@ -2,7 +2,8 @@ from selenium import webdriver
 from Pages.pageIndex import *
 from Pages.pageRegister import *
 import xmlrunner
-
+import  HtmlTestRunner
+import unittest
 """
 Se define una clase que hereda de unittes.TestCase
 """
@@ -46,15 +47,20 @@ class NewTours (unittest.TestCase):
         self.driver.close()
         self.driver.quit()
 
-    """
-    Generar reporte XML de los Test corridos
-    Para ello hacemos un metodo main 
-    """
 if __name__ == '__main__':
-    unittest.main(
-        testRunner=xmlrunner.XMLTestRunner(output='output'),
-    #     failfast se utiliza para controlar posibles errores en el reporte
-        failfast=False,
-        buffer=False,
-        catchbreak=False
-    )
+    unittest.main(testRunner=HtmlTestRunner.HTMLTestRunner(output='example_dir'))
+
+
+
+    # """
+    # Generar reporte XML de los Test corridos
+    # Para ello hacemos un metodo main
+    # """
+# if __name__ == '__main__':
+#     unittest.main(
+#         testRunner=xmlrunner.XMLTestRunner(output='output'),
+#     #     failfast se utiliza para controlar posibles errores en el reporte
+#         failfast=False,
+#         buffer=False,
+#         catchbreak=False
+#     )
