@@ -13,7 +13,7 @@ de hacerlo puede ser posterior, evitando el problema de que los elementos (objet
 no se hayan obtenido aun en el cuerpo de un HTTP request message
 
 DOM : El DOM permite el acceso dinámico a través de la programación para acceder, añadir
-y cambiar dinámicamente contenido estructurado en documentos con lenguajes como ECMAScript (JavaScript).ç
+y cambiar dinámicamente contenido estructurado en documentos con lenguajes como ECMAScript (JavaScript)
 
 Espera Implicita (Implicit Wait): evita usar tiempos excesivos de espera de carga del DOM
 
